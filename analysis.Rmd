@@ -17,4 +17,18 @@ data <- read.csv("repdata-data-StormData.csv")
 str(data)
 ```
 
+#Injuries per event
+Let's calculate the numeber of injuries and death per event in the last years.
+```{r cache=TRUE}
+inj_event <- aggregate(INJURIES ~ EVTYPE, data=data, FUN=sum)
+death_event <- aggregate(FATALITIES ~ EVTYPE, data=data, FUN=sum)
+```
+Let's visualize the results
+```{r cache=TRUE}
+head(inj_event)
+head(death_event)
+max(inj_event$INJURIES)
+max(death_event$FATALITIES)
+```
+
 # Results

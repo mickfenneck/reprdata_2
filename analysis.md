@@ -62,4 +62,59 @@ str(data)
 ```
 
 
+#Injuries per event
+Let's calculate the numeber of injuries and death per event in the last years.
+
+```r
+inj_event <- aggregate(INJURIES ~ EVTYPE, data = data, FUN = sum)
+death_event <- aggregate(FATALITIES ~ EVTYPE, data = data, FUN = sum)
+```
+
+Let's visualize the results
+
+```r
+head(inj_event)
+```
+
+```
+##                  EVTYPE INJURIES
+## 1    HIGH SURF ADVISORY        0
+## 2         COASTAL FLOOD        0
+## 3           FLASH FLOOD        0
+## 4             LIGHTNING        0
+## 5             TSTM WIND        0
+## 6       TSTM WIND (G45)        0
+```
+
+```r
+head(death_event)
+```
+
+```
+##                  EVTYPE FATALITIES
+## 1    HIGH SURF ADVISORY          0
+## 2         COASTAL FLOOD          0
+## 3           FLASH FLOOD          0
+## 4             LIGHTNING          0
+## 5             TSTM WIND          0
+## 6       TSTM WIND (G45)          0
+```
+
+```r
+max(inj_event$INJURIES)
+```
+
+```
+## [1] 91346
+```
+
+```r
+max(death_event$FATALITIES)
+```
+
+```
+## [1] 5633
+```
+
+
 # Results

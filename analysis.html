@@ -241,6 +241,51 @@ hljs.initHighlightingOnLoad();
 ##  $ REFNUM    : num  1 2 3 4 5 6 7 8 9 10 ...
 </code></pre>
 
+<p>#Injuries per event
+Let&#39;s calculate the numeber of injuries and death per event in the last years.</p>
+
+<pre><code class="r">inj_event &lt;- aggregate(INJURIES ~ EVTYPE, data = data, FUN = sum)
+death_event &lt;- aggregate(FATALITIES ~ EVTYPE, data = data, FUN = sum)
+</code></pre>
+
+<p>Let&#39;s visualize the results</p>
+
+<pre><code class="r">head(inj_event)
+</code></pre>
+
+<pre><code>##                  EVTYPE INJURIES
+## 1    HIGH SURF ADVISORY        0
+## 2         COASTAL FLOOD        0
+## 3           FLASH FLOOD        0
+## 4             LIGHTNING        0
+## 5             TSTM WIND        0
+## 6       TSTM WIND (G45)        0
+</code></pre>
+
+<pre><code class="r">head(death_event)
+</code></pre>
+
+<pre><code>##                  EVTYPE FATALITIES
+## 1    HIGH SURF ADVISORY          0
+## 2         COASTAL FLOOD          0
+## 3           FLASH FLOOD          0
+## 4             LIGHTNING          0
+## 5             TSTM WIND          0
+## 6       TSTM WIND (G45)          0
+</code></pre>
+
+<pre><code class="r">max(inj_event$INJURIES)
+</code></pre>
+
+<pre><code>## [1] 91346
+</code></pre>
+
+<pre><code class="r">max(death_event$FATALITIES)
+</code></pre>
+
+<pre><code>## [1] 5633
+</code></pre>
+
 <h1>Results</h1>
 
 </body>
