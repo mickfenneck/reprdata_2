@@ -1,0 +1,8 @@
+data <- read.csv(bzfile("repdata-data-StormData.csv.bz2"))
+str(data)
+inj_event <- aggregate(INJURIES ~ EVTYPE, data=data, FUN=sum)
+death_event <- aggregate(FATALITIES ~ EVTYPE, data=data, FUN=sum)
+head(inj_event)
+head(death_event)
+max(inj_event$INJURIES)
+max(death_event$FATALITIES)

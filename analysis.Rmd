@@ -9,7 +9,7 @@ describes (in words and code) how the data were loaded into R and processed for 
 ## raw csv file
 Load the data and cache it.
 ```{r cache=TRUE}
-data <- read.csv("repdata-data-StormData.csv")
+data <- read.csv(bzfile("repdata-data-StormData.csv.bz2"))
 ```
 
 ## preprocessing
